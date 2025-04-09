@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BootWebFluxProj01ReactiveProvidApplication {
+public class BootWebFluxMongoDbReactiveProvidApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BootWebFluxProj01ReactiveProvidApplication.class, args);
+		SpringApplication.run(BootWebFluxMongoDbReactiveProvidApp.class, args);
 	}
 
 }
