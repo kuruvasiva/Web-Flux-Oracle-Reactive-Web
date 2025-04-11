@@ -23,9 +23,9 @@ public class GamerServiceMnmtImpl implements IGamerServiceMnmg {
 		 Mono<String> mono = client
 				 .post()
 				  .uri("gamer-api/save")
-	                .bodyValue(gamer)
-	                .retrieve()
-	                .bodyToMono(String.class);
+	                          .bodyValue(gamer)
+	                          .retrieve()
+	                          .bodyToMono(String.class);
 		return mono;
 	}
 
@@ -42,8 +42,8 @@ public class GamerServiceMnmtImpl implements IGamerServiceMnmg {
 		Flux<Gamer> flux = client
 				      .get()
 				      .uri("/gamer-api/all")
-		              .retrieve()
-		              .bodyToFlux(Gamer.class);
+		                      .retrieve()
+		                      .bodyToFlux(Gamer.class);
 		return flux;
 	}
 
@@ -53,8 +53,8 @@ public class GamerServiceMnmtImpl implements IGamerServiceMnmg {
 		Mono<Gamer> mono = client
 				.get()
 				.uri("/gamer-api/find/{id}", gamerId)
-	            .retrieve()
-	            .bodyToMono(Gamer.class);
+	                        .retrieve()
+	                        .bodyToMono(Gamer.class);
 		return mono;
 	}
 
@@ -63,16 +63,16 @@ public class GamerServiceMnmtImpl implements IGamerServiceMnmg {
 		// TODO Auto-generated method stub
 		Mono<Void> monoVoid = client
 				.delete()
-	            .uri("/gamer-api/delete?id="+ gamerId)
-	            .retrieve()
-	            .bodyToMono(Void.class);
+	                        .uri("/gamer-api/delete?id="+ gamerId)
+	                        .retrieve()
+	                        .bodyToMono(Void.class);
 		return monoVoid;
 	}
 	@Override
 	public Mono<String> deleteGamerByIdWithOutMSG(Integer gamerId) {
 		// TODO Auto-generated method stub
 		Mono<String> monoVoid = client
-				.delete()
+		    .delete()
 	            .uri("/gamer-api/delete?id="+ gamerId)
 	            .retrieve()
 	            .bodyToMono(String.class);
@@ -105,7 +105,7 @@ public class GamerServiceMnmtImpl implements IGamerServiceMnmg {
 	public Mono<String> deleteGamer(Gamer gamer) {
 		// TODO Auto-generated method stub
 		Mono<String> monoMsg = client
-				.method(HttpMethod.DELETE) // Use method explicitly to allow body
+	            .method(HttpMethod.DELETE) // Use method explicitly to allow body
 	            .uri("/gamer-api/objdelete")
 	            .bodyValue(gamer)
 	            .retrieve()
